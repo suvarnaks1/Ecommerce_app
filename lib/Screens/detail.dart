@@ -1,18 +1,16 @@
+import 'package:ecomerce_app/Screens/HomePage.dart';
+import 'package:ecomerce_app/models/ecomercemodel.dart';
 import 'package:flutter/material.dart';
 
-class DetailPage extends StatefulWidget {
-  const DetailPage({super.key});
+class DetailPage extends StatelessWidget {
+  final EcommerceModel product;
+  const DetailPage({super.key, required this.product});
 
-  @override
-  State<DetailPage> createState() => _DetailPageState();
-}
-
-class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.white,
-     
       body: Column(
         children: [
           Container(
@@ -31,27 +29,18 @@ class _DetailPageState extends State<DetailPage> {
             width: double.infinity,
             child: Column(
               children: [
-                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                            onPressed: () {
-                                                          Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const DetailPage()),
-  );
-                            }, icon: Icon(Icons.arrow_back)),
-                     IconButton(
-                          onPressed: () {}, icon: Icon(Icons.favorite_border)),
-                    
-                  ],
-                ),
-                   ClipRRect(
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(16),
-                                            bottomRight: Radius.circular(16)),
-                                        child: Image.asset('assets/photo.jpeg',height: 240,width: double.infinity,fit: BoxFit.contain,)
-                                      ),
-                //Image.asset('assets/photo.jpeg',height: 240,width: double.infinity,fit: BoxFit.fill,) 
+                ClipRRect(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(16),
+                        bottomRight: Radius.circular(16)),
+                    child: Image.asset(
+                      product.image,
+                      height: 240,
+                      width: double.infinity,
+                      fit: BoxFit.fill,
+                    )),
+                //Image.asset('assets/photo.jpeg',height: 240,width: double.infinity,fit: BoxFit.fill,)
+                Text(product.category)
               ],
             ),
           )

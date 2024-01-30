@@ -1,5 +1,6 @@
 import 'package:ecomerce_app/Screens/HomePage.dart';
 import 'package:ecomerce_app/Screens/detail.dart';
+import 'package:ecomerce_app/models/ecomercemodel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -53,7 +54,7 @@ class _BottomNavigation extends State<BottomNavigation> {
         },
         children: [
           HomePage(),
-             DetailPage(),
+             // DetailPage(),
           Container(
             color: Colors.green,
             child: Center(
