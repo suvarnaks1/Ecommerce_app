@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
             // Horizontal ListView.builder
             Container(
               //color: Colors.amber,
-              height: 90,
+              height: 77,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: categories.length, // Adjust the number of items
@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 19,
             ),
-            //gridviewbuilder
+            //gridviewbuilder create
 
             SizedBox(
               child: FutureBuilder<List<EcommerceModel>>(
